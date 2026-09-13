@@ -1,0 +1,16 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:cooking_knife"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:croissant",
+    "count": 2
+  }
+}

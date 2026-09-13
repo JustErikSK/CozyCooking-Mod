@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "cozycooking",
+	"version": "${version}",
+	"name": "Cozy Cooking",
+	"description": "Cozy Cooking adds a huge variety of foods and ingredients.",
+	"authors": [
+		"JustErikSK",
+		"Satorisek",
+		"With Rage Studios"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/cozy-cooking-mod",
+		"issues": "https://github.com/JustErikSK/CozyCooking-Mod/issues",
+		"sources": "https://github.com/JustErikSK/CozyCooking-Mod"
+	},
+	"license": "MIT",
+	"icon": "assets/cozycooking/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.withrage.cozycooking.CozyCooking"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.0",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}

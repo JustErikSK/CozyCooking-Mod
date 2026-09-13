@@ -1,0 +1,22 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:cooking_pot"
+    },
+    {
+      "item": "cozycooking:jar"
+    },
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:apple_jam",
+    "count": 2
+  }
+}

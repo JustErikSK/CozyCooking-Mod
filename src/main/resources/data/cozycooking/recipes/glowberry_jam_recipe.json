@@ -1,0 +1,22 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:cooking_pot"
+    },
+    {
+      "item": "cozycooking:jar"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:glowberry_jam",
+    "count": 2
+  }
+}

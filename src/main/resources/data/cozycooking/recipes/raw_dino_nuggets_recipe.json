@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:minced_chicken"
+    },
+    {
+      "item": "cozycooking:flour"
+    },
+    {
+      "item": "cozycooking:cookie_cutter"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:raw_dino_nuggets",
+    "count": 2
+  }
+}

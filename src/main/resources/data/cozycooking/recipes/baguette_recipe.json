@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    "  A",
+    " A ",
+    "A  "
+  ],
+  "key": {
+    "A": {
+      "item": "cozycooking:dough"
+    }
+  },
+  "result": {
+    "item": "cozycooking:baguette",
+    "count": 2
+  }
+}

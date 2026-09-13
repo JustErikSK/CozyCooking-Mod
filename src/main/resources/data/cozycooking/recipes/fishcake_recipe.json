@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    "ABC",
+    "DE ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "cozycooking:starch"
+    },
+    "B": {
+      "item": "minecraft:salmon"
+    },
+    "C": {
+      "item": "minecraft:red_dye"
+    },
+    "D": {
+      "item": "cozycooking:salt"
+    },
+    "E": {
+      "item": "minecraft:egg"
+    }
+  },
+  "result": {
+    "item": "cozycooking:fishcake",
+    "count": 2
+  }
+}

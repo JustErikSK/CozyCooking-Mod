@@ -1,0 +1,16 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "cozycooking:whisk"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:cocoa_powder",
+    "count": 3
+  }
+}

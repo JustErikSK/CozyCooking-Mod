@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:cooking_pot"
+    },
+    {
+      "item": "cozycooking:milk_box"
+    },
+    {
+      "item": "cozycooking:salt"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:cheese",
+    "count": 2
+  }
+}

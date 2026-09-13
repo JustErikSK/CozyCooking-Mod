@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:milk_box"
+    },
+    {
+      "item": "cozycooking:cheese"
+    },
+    {
+      "item": "cozycooking:whisk"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:cream_cheese",
+    "count": 4
+  }
+}

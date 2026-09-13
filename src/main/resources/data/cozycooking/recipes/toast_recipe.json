@@ -1,0 +1,10 @@
+{
+  "type": "cozycooking:toasting",
+  "input": {
+    "item": "cozycooking:slice_of_bread"
+  },
+  "output": {
+    "item": "cozycooking:toast",
+    "count": 1
+  }
+}

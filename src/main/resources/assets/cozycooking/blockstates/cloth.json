@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cozycooking:block/cloth",
+      "y": 0
+    },
+    "facing=south": {
+      "model": "cozycooking:block/cloth",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "cozycooking:block/cloth",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "cozycooking:block/cloth",
+      "y": 270
+    }
+  }
+}

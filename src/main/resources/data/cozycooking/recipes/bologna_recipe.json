@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "tag": "cozycooking:minced_meat"
+    },
+    {
+      "tag": "cozycooking:minced_meat"
+    },
+    {
+      "item": "cozycooking:salt"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:bologna",
+    "count": 4
+  }
+}

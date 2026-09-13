@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": [
+    "AA ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "result": {
+    "item": "cozycooking:cutting_board",
+    "count": 1
+  }
+}

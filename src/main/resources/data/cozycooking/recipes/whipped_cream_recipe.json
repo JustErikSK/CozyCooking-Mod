@@ -1,0 +1,16 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:whisk"
+    },
+    {
+      "item": "cozycooking:milk_box"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:whipped_cream",
+    "count": 2
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "cozyingredients:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "tag": "cozycooking:sugar"
+    },
+    {
+      "item": "cozycooking:whisk"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:gelatin",
+    "count": 2
+  }
+}

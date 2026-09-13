@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:cooking_pot"
+    },
+    {
+      "item": "cozycooking:jar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:caramel",
+    "count": 2
+  }
+}

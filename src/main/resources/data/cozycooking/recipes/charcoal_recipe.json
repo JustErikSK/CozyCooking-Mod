@@ -1,0 +1,11 @@
+{
+  "type": "cozycooking:toasting",
+  "category": "misc",
+  "input": {
+    "item": "cozycooking:burned_toast"
+  },
+  "output": {
+    "item": "minecraft:charcoal",
+    "count": 1
+  }
+}

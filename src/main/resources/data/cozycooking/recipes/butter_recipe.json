@@ -1,0 +1,16 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:whisk"
+    },
+    {
+      "item": "cozycooking:whipped_cream"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:butter",
+    "count": 2
+  }
+}

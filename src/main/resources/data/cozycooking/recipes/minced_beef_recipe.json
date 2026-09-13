@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "item": "cozycooking:cleaver"
+    },
+    {
+      "item": "cozycooking:cutting_board"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:minced_beef",
+    "count": 2
+  }
+}

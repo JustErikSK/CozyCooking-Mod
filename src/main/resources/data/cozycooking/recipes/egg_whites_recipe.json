@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "cozycooking:whisk"
+    },
+    {
+      "item": "cozycooking:ramekin"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:egg_whites",
+    "count": 1
+  }
+}

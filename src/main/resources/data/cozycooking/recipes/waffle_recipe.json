@@ -1,0 +1,19 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:whisk"
+    },
+    {
+      "item": "cozycooking:cake_form"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:waffle",
+    "count": 2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "cozycooking:minced_beef",
+    "cozycooking:minced_chicken",
+    "cozycooking:minced_lamb",
+    "cozycooking:minced_pork"
+  ]
+}

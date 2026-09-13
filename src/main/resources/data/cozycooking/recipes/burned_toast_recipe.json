@@ -1,0 +1,11 @@
+{
+  "type": "cozycooking:toasting",
+  "category": "food",
+  "input": {
+    "item": "cozycooking:toast"
+  },
+  "output": {
+    "item": "cozycooking:burned_toast",
+    "count": 1
+  }
+}
