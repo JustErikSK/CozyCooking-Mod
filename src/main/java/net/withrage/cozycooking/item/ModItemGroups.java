@@ -1,80 +1,89 @@
 package net.withrage.cozycooking.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.withrage.cozycooking.CozyCooking;
 import net.withrage.cozycooking.block.ModBlocks;
 
 public class ModItemGroups {
-    public static final ItemGroup COZY_COOKING = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(CozyCooking.MOD_ID, "apple_jam"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.cozyingredients"))
-                    .icon(() -> new ItemStack(ModItems.APPLE_JAM)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.APPLE_JAM);
-                        entries.add(ModItems.SWEETBERRY_JAM);
-                        entries.add(ModItems.GLOWBERRY_JAM);
-                        entries.add(ModItems.CARAMEL);
-                        entries.add(ModItems.NUHTELLA);
-                        entries.add(ModItems.CHOCOLATE_SYRUP);
-                        entries.add(ModItems.FRUIT_SYRUP);
-                        entries.add(ModItems.SLICE_OF_BREAD);
-                        entries.add(ModItems.TOAST);
-                        entries.add(ModItems.BURNED_TOAST);
-                        entries.add(ModItems.WAFFLE);
-                        entries.add(ModItems.CROISSANT);
-                        entries.add(ModItems.BURGER_BUN);
-                        entries.add(ModItems.BAGEL);
-                        entries.add(ModItems.BAGUETTE);
-                        entries.add(ModItems.ICE_CREAM_CONE);
-                        entries.add(ModItems.BUTTER);
-                        entries.add(ModItems.CHEESE);
-                        entries.add(ModItems.CREAM_CHEESE);
-                        entries.add(ModItems.MILK_BOX);
-                        entries.add(ModItems.GLASS_OF_WATER);
-                        entries.add(ModItems.BOILED_EGG);
-                        entries.add(ModItems.SUNNY_SIDE_UP_EGG);
-                        entries.add(ModItems.FISHCAKE);
-                        entries.add(ModItems.EGG_WHITES);
-                        entries.add(ModItems.EGG_YOLKS);
-                        entries.add(ModItems.NOODLES);
-                        entries.add(ModItems.RAW_CHIPS);
-                        entries.add(ModItems.RAW_FRIES);
-                        entries.add(ModItems.RAW_DINO_NUGGETS);
-                        entries.add(ModItems.BOLOGNA);
-                        entries.add(ModItems.RAW_BACON);
-                        entries.add(ModItems.BACON);
-                        entries.add(ModItems.MINCED_BEEF);
-                        entries.add(ModItems.MINCED_CHICKEN);
-                        entries.add(ModItems.MINCED_LAMB);
-                        entries.add(ModItems.MINCED_PORK);
-                        entries.add(ModItems.SALT);
-                        entries.add(ModItems.FLOUR);
-                        entries.add(ModItems.STARCH);
-                        entries.add(ModItems.POWDERED_SUGAR);
-                        entries.add(ModItems.COCOA_POWDER);
-                        entries.add(ModItems.WHIPPED_CREAM);
-                        entries.add(ModItems.DOUGH);
-                        entries.add(ModItems.GELATIN);
-                        entries.add(ModItems.JAR);
-                        entries.add(ModItems.WHISK);
-                        entries.add(ModItems.COOKING_KNIFE);
-                        entries.add(ModItems.CLEAVER);
-                        entries.add(ModItems.COOKING_POT);
-                        entries.add(ModItems.PAN);
-                        entries.add(ModItems.COOKIE_CUTTER);
-                        entries.add(ModItems.CAKE_FORM);
-                        entries.add(ModItems.RAMEKIN);
-                        entries.add(ModBlocks.TOASTER);
-                        entries.add(ModBlocks.CUTTING_BOARD);
-                        entries.add(ModBlocks.CLOTH);
-                    }).build());
+
+    public static final CreativeModeTab COZY_COOKING = Registry.register(
+            BuiltInRegistries.CREATIVE_MODE_TAB,
+            new ResourceLocation(CozyCooking.MOD_ID, "cozy_cooking"),
+            FabricItemGroup.builder()
+                    .title(Component.translatable("itemgroup.cozycooking"))
+                    .icon(() -> new ItemStack(ModItems.APPLE_JAM))
+                    .displayItems((displayContext, entries) -> {
+                        entries.accept(ModItems.APPLE_JAM);
+                        entries.accept(ModItems.SWEETBERRY_JAM);
+                        entries.accept(ModItems.GLOWBERRY_JAM);
+                        entries.accept(ModItems.CARAMEL);
+                        entries.accept(ModItems.NUHTELLA);
+                        entries.accept(ModItems.CHOCOLATE_SYRUP);
+                        entries.accept(ModItems.FRUIT_SYRUP);
+                        entries.accept(ModItems.SLICE_OF_BREAD);
+                        entries.accept(ModItems.TOAST);
+                        entries.accept(ModItems.BURNED_TOAST);
+                        entries.accept(ModItems.WAFFLE);
+                        entries.accept(ModItems.CROISSANT);
+                        entries.accept(ModItems.BURGER_BUN);
+                        entries.accept(ModItems.BAGEL);
+                        entries.accept(ModItems.BAGUETTE);
+                        entries.accept(ModItems.ICE_CREAM_CONE);
+                        entries.accept(ModItems.BUTTER);
+                        entries.accept(ModItems.CHEESE);
+                        entries.accept(ModItems.CREAM_CHEESE);
+                        entries.accept(ModItems.MILK_BOX);
+                        entries.accept(ModItems.GLASS_OF_WATER);
+                        entries.accept(ModItems.BOILED_EGG);
+                        entries.accept(ModItems.SUNNY_SIDE_UP_EGG);
+                        entries.accept(ModItems.FISHCAKE);
+                        entries.accept(ModItems.EGG_WHITES);
+                        entries.accept(ModItems.EGG_YOLKS);
+                        entries.accept(ModItems.NOODLES);
+                        entries.accept(ModItems.RAW_CHIPS);
+                        entries.accept(ModItems.RAW_FRIES);
+                        entries.accept(ModItems.RAW_DINO_NUGGETS);
+                        entries.accept(ModItems.BOLOGNA);
+                        entries.accept(ModItems.RAW_BACON);
+                        entries.accept(ModItems.BACON);
+                        entries.accept(ModItems.MINCED_BEEF);
+                        entries.accept(ModItems.MINCED_CHICKEN);
+                        entries.accept(ModItems.MINCED_LAMB);
+                        entries.accept(ModItems.MINCED_PORK);
+                        entries.accept(ModItems.SALT);
+                        entries.accept(ModItems.FLOUR);
+                        entries.accept(ModItems.STARCH);
+                        entries.accept(ModItems.POWDERED_SUGAR);
+                        entries.accept(ModItems.COCOA_POWDER);
+                        entries.accept(ModItems.WHIPPED_CREAM);
+                        entries.accept(ModItems.DOUGH);
+                        entries.accept(ModItems.GELATIN);
+                        entries.accept(ModItems.JAR);
+                        entries.accept(ModItems.WHISK);
+                        entries.accept(ModItems.COOKING_KNIFE);
+                        entries.accept(ModItems.CLEAVER);
+                        entries.accept(ModItems.COOKING_POT);
+                        entries.accept(ModItems.PAN);
+                        entries.accept(ModItems.COOKIE_CUTTER);
+                        entries.accept(ModItems.CAKE_FORM);
+                        entries.accept(ModItems.RAMEKIN);
+
+                        entries.accept(ModBlocks.TOASTER);
+                        entries.accept(ModBlocks.CUTTING_BOARD);
+                        entries.accept(ModBlocks.CLOTH);
+                    })
+                    .build()
+    );
 
     public static void registerItemGroups() {
-        CozyCooking.LOGGER.info("Registering Item Groups for " + CozyCooking.MOD_ID);
+        CozyCooking.LOGGER.info(
+                "Registering Item Groups for " + CozyCooking.MOD_ID
+        );
     }
 }

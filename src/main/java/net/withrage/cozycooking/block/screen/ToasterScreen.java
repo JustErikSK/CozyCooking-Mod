@@ -1,59 +1,98 @@
-
 package net.withrage.cozycooking.block.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.client.render.GameRenderer;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.GameRenderer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Inventory;
 import net.withrage.cozycooking.CozyCooking;
 
-public class ToasterScreen extends HandledScreen<ToasterScreenHandler> {
-    private static final Identifier TEXTURE = new Identifier(CozyCooking.MOD_ID, "textures/gui/toaster_gui.png");
+public class ToasterScreen extends AbstractContainerScreen<ToasterScreenHandler> {
 
-    public ToasterScreen(ToasterScreenHandler handler, PlayerInventory inventory, Text title) {
+    private static final ResourceLocation TEXTURE =
+            new ResourceLocation(CozyCooking.MOD_ID, "textures/gui/toaster_gui.png");
+
+    public ToasterScreen(
+            ToasterScreenHandler handler,
+            Inventory inventory,
+            Component title
+    ) {
         super(handler, inventory, title);
     }
 
     @Override
     protected void init() {
         super.init();
-        titleY = 1000;
-        playerInventoryTitleY = 1000;
+
+        titleLabelY = 1000;
+        inventoryLabelY = 1000;
     }
 
     @Override
-    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
+    protected void renderBg(
+            GuiGraphics graphics,
+            float delta,
+            int mouseX,
+            int mouseY
+    ) {
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         RenderSystem.setShaderTexture(0, TEXTURE);
-        int x = (width - backgroundWidth) / 2;
-        int y = (height - backgroundHeight) / 2;
 
-        context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
 
-        renderProgressArrow(context, x, y);
+        graphics.blit(
+                TEXTURE,
+                x,
+                y,
+                0,
+                0,
+                imageWidth,
+                imageHeight
+        );
+
+        renderProgressArrow(graphics, x, y);
     }
 
-    private void renderProgressArrow(DrawContext context, int x, int y) {
-        if (handler.isCrafting()) {
-            int progress = handler.getScaledProgress();
+    private void renderProgressArrow(
+            GuiGraphics graphics,
+            int x,
+            int y
+    ) {
+        if (menu.isCrafting()) {
+            int progress = menu.getScaledProgress();
             int arrowFullHeight = 16;
+
             int drawX = x + 85;
             int drawY = y + 40 + (arrowFullHeight - progress);
+
             int textureU = 176;
             int textureV = 25 - progress;
 
-            context.drawTexture(TEXTURE, drawX, drawY, textureU, textureV, 6, progress);
+            graphics.blit(
+                    TEXTURE,
+                    drawX,
+                    drawY,
+                    textureU,
+                    textureV,
+                    6,
+                    progress
+            );
         }
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        renderBackground(context);
-        super.render(context, mouseX, mouseY, delta);
-        drawMouseoverTooltip(context, mouseX, mouseY);
+    public void render(
+            GuiGraphics graphics,
+            int mouseX,
+            int mouseY,
+            float delta
+    ) {
+        renderBackground(graphics);
+        super.render(graphics, mouseX, mouseY, delta);
+        renderTooltip(graphics, mouseX, mouseY);
     }
 }

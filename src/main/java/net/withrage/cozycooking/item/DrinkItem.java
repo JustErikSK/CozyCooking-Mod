@@ -1,16 +1,17 @@
 package net.withrage.cozycooking.item;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.UseAction;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.UseAnim;
 
 public class DrinkItem extends Item {
-    public DrinkItem(Settings settings) {
-        super(settings);
+
+    public DrinkItem(Properties properties) {
+        super(properties);
     }
 
     @Override
-    public UseAction getUseAction(ItemStack stack) {
-        return UseAction.DRINK;
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.DRINK;
     }
 }

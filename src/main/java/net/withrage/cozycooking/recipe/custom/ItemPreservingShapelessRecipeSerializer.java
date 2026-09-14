@@ -1,38 +1,52 @@
 package net.withrage.cozycooking.recipe.custom;
 
 import com.google.gson.JsonObject;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.ShapelessRecipe;
-import net.minecraft.util.Identifier;
-import net.minecraft.network.PacketByteBuf;
+import net.minecraft.core.RegistryAccess;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.ShapelessRecipe;
 
-public class ItemPreservingShapelessRecipeSerializer implements RecipeSerializer<ItemPreservingShapelessRecipe> {
+public class ItemPreservingShapelessRecipeSerializer
+        implements RecipeSerializer<ItemPreservingShapelessRecipe> {
+
     @Override
-    public ItemPreservingShapelessRecipe read(Identifier id, JsonObject json) {
-        ShapelessRecipe base = RecipeSerializer.SHAPELESS.read(id, json);
+    public ItemPreservingShapelessRecipe fromJson(
+            ResourceLocation id,
+            JsonObject json
+    ) {
+        ShapelessRecipe base = RecipeSerializer.SHAPELESS_RECIPE.fromJson(id, json);
+
         return new ItemPreservingShapelessRecipe(
                 base.getId(),
                 base.getGroup(),
-                base.getCategory(),
-                base.getOutput(null),
+                base.category(),
+                base.getResultItem(RegistryAccess.EMPTY),
                 base.getIngredients()
         );
     }
 
     @Override
-    public ItemPreservingShapelessRecipe read(Identifier id, PacketByteBuf buf) {
-        ShapelessRecipe base = RecipeSerializer.SHAPELESS.read(id, buf);
+    public ItemPreservingShapelessRecipe fromNetwork(
+            ResourceLocation id,
+            FriendlyByteBuf buf
+    ) {
+        ShapelessRecipe base = RecipeSerializer.SHAPELESS_RECIPE.fromNetwork(id, buf);
+
         return new ItemPreservingShapelessRecipe(
                 base.getId(),
                 base.getGroup(),
-                base.getCategory(),
-                base.getOutput(null),
+                base.category(),
+                base.getResultItem(RegistryAccess.EMPTY),
                 base.getIngredients()
         );
     }
 
     @Override
-    public void write(PacketByteBuf buf, ItemPreservingShapelessRecipe recipe) {
-        RecipeSerializer.SHAPELESS.write(buf, recipe);
+    public void toNetwork(
+            FriendlyByteBuf buf,
+            ItemPreservingShapelessRecipe recipe
+    ) {
+        RecipeSerializer.SHAPELESS_RECIPE.toNetwork(buf, recipe);
     }
 }

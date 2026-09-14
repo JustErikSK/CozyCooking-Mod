@@ -1,32 +1,40 @@
 package net.withrage.cozycooking.recipe;
 
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.ShapedRecipe;
-import net.minecraft.util.Identifier;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.item.ItemStack;
 import com.google.gson.JsonObject;
-import net.minecraft.util.JsonHelper;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.GsonHelper;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 
 public class ToasterRecipeSerializer implements RecipeSerializer<ToasterRecipe> {
+
     @Override
-    public ToasterRecipe read(Identifier id, JsonObject json) {
-        Ingredient input = Ingredient.fromJson(JsonHelper.getObject(json, "input"));
-        ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
+    public ToasterRecipe fromJson(ResourceLocation id, JsonObject json) {
+        Ingredient input = Ingredient.fromJson(
+                GsonHelper.getAsJsonObject(json, "input")
+        );
+
+        ItemStack output = ShapedRecipe.itemStackFromJson(
+                GsonHelper.getAsJsonObject(json, "output")
+        );
+
         return new ToasterRecipe(id, input, output);
     }
 
     @Override
-    public ToasterRecipe read(Identifier id, PacketByteBuf buf) {
-        Ingredient input = Ingredient.fromPacket(buf);
-        ItemStack output = buf.readItemStack();
+    public ToasterRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        Ingredient input = Ingredient.fromNetwork(buf);
+        ItemStack output = buf.readItem();
+
         return new ToasterRecipe(id, input, output);
     }
 
     @Override
-    public void write(PacketByteBuf buf, ToasterRecipe recipe) {
-        recipe.getInput().write(buf);
-        buf.writeItemStack(recipe.getOutput(null));
+    public void toNetwork(FriendlyByteBuf buf, ToasterRecipe recipe) {
+        recipe.getInput().toNetwork(buf);
+        buf.writeItem(recipe.getResultItem(null));
     }
 }

@@ -1,24 +1,23 @@
 package net.withrage.cozycooking.block.entity;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventories;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.ContainerHelper;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.withrage.cozycooking.block.screen.ToasterScreenHandler;
-import net.withrage.cozycooking.item.ModItems;
 import net.withrage.cozycooking.recipe.ModRecipes;
 import net.withrage.cozycooking.recipe.ToasterRecipe;
 import org.jetbrains.annotations.Nullable;
@@ -26,18 +25,22 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class ToasterBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
-    private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
+
+    private final NonNullList<ItemStack> inventory =
+            NonNullList.withSize(2, ItemStack.EMPTY);
 
     private static final int INPUT_SLOT = 1;
     private static final int OUTPUT_SLOT = 0;
 
-    protected final PropertyDelegate propertyDelegate;
+    protected final ContainerData data;
+
     private int progress = 0;
     private int maxProgress = 72;
 
     public ToasterBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.TOASTER, pos, state);
-        this.propertyDelegate = new PropertyDelegate() {
+
+        this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
@@ -56,67 +59,86 @@ public class ToasterBlockEntity extends BlockEntity implements ExtendedScreenHan
             }
 
             @Override
-            public int size() {
+            public int getCount() {
                 return 2;
             }
         };
     }
 
     @Override
-    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
-        buf.writeBlockPos(this.pos);
+    public void writeScreenOpeningData(ServerPlayer player, FriendlyByteBuf buf) {
+        buf.writeBlockPos(this.worldPosition);
     }
 
     @Override
-    public Text getDisplayName() {
-        return Text.literal("Toaster");
+    public Component getDisplayName() {
+        return Component.literal("Toaster");
     }
 
     @Override
-    public DefaultedList<ItemStack> getItems() {
+    public NonNullList<ItemStack> getItems() {
         return inventory;
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt) {
-        super.writeNbt(nbt);
-        Inventories.writeNbt(nbt, inventory);
-        nbt.putInt("toaster.progress", progress);
+    protected void saveAdditional(CompoundTag tag) {
+        super.saveAdditional(tag);
+
+        ContainerHelper.saveAllItems(tag, inventory);
+        tag.putInt("toaster.progress", progress);
     }
 
     @Override
-    public void readNbt(NbtCompound nbt) {
-        super.readNbt(nbt);
-        Inventories.readNbt(nbt, inventory);
-        progress = nbt.getInt("toaster.progress");
+    public void load(CompoundTag tag) {
+        super.load(tag);
+
+        ContainerHelper.loadAllItems(tag, inventory);
+        progress = tag.getInt("toaster.progress");
     }
 
     @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new ToasterScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
+    public AbstractContainerMenu createMenu(
+            int syncId,
+            Inventory playerInventory,
+            Player player
+    ) {
+        return new ToasterScreenHandler(
+                syncId,
+                playerInventory,
+                this,
+                this.data
+        );
     }
 
-    public void tick(World world, BlockPos pos, BlockState state) {
-        if(world.isClient()) return;
+    public void tick(Level level, BlockPos pos, BlockState state) {
+        if (level.isClientSide) {
+            return;
+        }
 
         Optional<ToasterRecipe> recipe = getCurrentRecipe();
 
         if (isOutputSlotEmptyOrReceivable()) {
-            if (recipe.isPresent() && canInsertItemIntoOutputSlot(recipe.get().getOutput(world.getRegistryManager()).getItem())) {
-                this.increaseCraftProgress();
-                markDirty(world, pos, state);
+            if (recipe.isPresent()
+                    && canInsertItemIntoOutputSlot(
+                    recipe.get()
+                            .getResultItem(level.registryAccess())
+                            .getItem()
+            )) {
+
+                increaseCraftProgress();
+                setChanged(level, pos, state);
 
                 if (hasCraftingFinished()) {
-                    this.craftItem(recipe.get());
-                    this.resetProgress();
+                    craftItem(recipe.get());
+                    resetProgress();
                 }
             } else {
-                this.resetProgress();
+                resetProgress();
             }
         } else {
-            this.resetProgress();
-            markDirty(world, pos, state);
+            resetProgress();
+            setChanged(level, pos, state);
         }
     }
 
@@ -125,10 +147,21 @@ public class ToasterBlockEntity extends BlockEntity implements ExtendedScreenHan
     }
 
     private void craftItem(ToasterRecipe recipe) {
-        this.removeStack(INPUT_SLOT, 1);
-        ItemStack result = recipe.getOutput(world.getRegistryManager());
+        if (level == null) {
+            return;
+        }
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+        this.removeItem(INPUT_SLOT, 1);
+
+        ItemStack result = recipe.getResultItem(level.registryAccess());
+
+        this.setItem(
+                OUTPUT_SLOT,
+                new ItemStack(
+                        result.getItem(),
+                        getItem(OUTPUT_SLOT).getCount() + result.getCount()
+                )
+        );
     }
 
     private boolean hasCraftingFinished() {
@@ -140,18 +173,27 @@ public class ToasterBlockEntity extends BlockEntity implements ExtendedScreenHan
     }
 
     private Optional<ToasterRecipe> getCurrentRecipe() {
-        return world.getRecipeManager().getFirstMatch(ModRecipes.TOASTER_TYPE, this, world);
+        if (level == null) {
+            return Optional.empty();
+        }
+
+        return level.getRecipeManager()
+                .getRecipeFor(ModRecipes.TOASTER_TYPE, this, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
-        return this.getStack(OUTPUT_SLOT).getItem() == item || this.getStack(OUTPUT_SLOT).isEmpty();
+        return this.getItem(OUTPUT_SLOT).getItem() == item
+                || this.getItem(OUTPUT_SLOT).isEmpty();
     }
 
     private boolean canInsertAmountIntoOutputSlot(ItemStack result) {
-        return this.getStack(OUTPUT_SLOT).getCount() + result.getCount() <= getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getItem(OUTPUT_SLOT).getCount() + result.getCount()
+                <= this.getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 
     private boolean isOutputSlotEmptyOrReceivable() {
-        return this.getStack(OUTPUT_SLOT).isEmpty() || this.getStack(OUTPUT_SLOT).getCount() < this.getStack(OUTPUT_SLOT).getMaxCount();
+        return this.getItem(OUTPUT_SLOT).isEmpty()
+                || this.getItem(OUTPUT_SLOT).getCount()
+                < this.getItem(OUTPUT_SLOT).getMaxStackSize();
     }
 }
