@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class CozyCooking implements ModInitializer {
-	public static final String MOD_ID = "cozyingredients";
+	public static final String MOD_ID = "cozycooking";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override

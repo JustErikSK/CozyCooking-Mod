@@ -14,7 +14,7 @@ public class ModItemGroups {
 
     public static final CreativeModeTab COZY_COOKING = Registry.register(
             BuiltInRegistries.CREATIVE_MODE_TAB,
-            new ResourceLocation(CozyCooking.MOD_ID, "cozy_cooking"),
+            new ResourceLocation(CozyCooking.MOD_ID, "cozycooking"),
             FabricItemGroup.builder()
                     .title(Component.translatable("itemgroup.cozycooking"))
                     .icon(() -> new ItemStack(ModItems.APPLE_JAM))
