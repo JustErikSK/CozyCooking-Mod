@@ -20,6 +20,9 @@
 	"entrypoints": {
 		"main": [
 			"net.withrage.cozycooking.CozyCooking"
+		],
+		"client": [
+			"net.withrage.cozycooking.CozyCookingClient"
 		]
 	},
 	"depends": {
