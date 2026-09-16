@@ -31,7 +31,7 @@ public class ModItems {
     public static final Item SLICE_OF_BREAD = registerItem("slice_of_bread", new Item(new FabricItemSettings().food(ModFoodComponents.SLICE_OF_BREAD)));
     public static final Item BOILED_EGG = registerItem("boiled_egg", new Item(new FabricItemSettings().food(ModFoodComponents.BOILED_EGG)));
     public static final Item BURGER_BUN = registerItem("burger_bun", new Item(new FabricItemSettings().food(ModFoodComponents.BURGER_BUN)));
-    public static final Item BURNED_TOAST = registerItem("burned_toast", new Item(new FabricItemSettings().food(ModFoodComponents.BURNED_TOAST)));
+    public static final Item BURNT_TOAST = registerItem("burnt_toast", new Item(new FabricItemSettings().food(ModFoodComponents.BURNED_TOAST)));
     public static final Item NOODLES = registerItem("noodles", new Item(new FabricItemSettings().food(ModFoodComponents.NOODLES)));
     public static final Item PAN = registerItem("pan", new Item(new FabricItemSettings()));
     public static final Item RAW_CHIPS = registerItem("raw_chips", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_CHIPS)));

@@ -29,7 +29,7 @@ public class ModItemGroups {
                         entries.accept(ModItems.FRUIT_SYRUP);
                         entries.accept(ModItems.SLICE_OF_BREAD);
                         entries.accept(ModItems.TOAST);
-                        entries.accept(ModItems.BURNED_TOAST);
+                        entries.accept(ModItems.BURNT_TOAST);
                         entries.accept(ModItems.WAFFLE);
                         entries.accept(ModItems.CROISSANT);
                         entries.accept(ModItems.BURGER_BUN);
