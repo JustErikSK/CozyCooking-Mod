@@ -66,7 +66,7 @@ public class ToasterScreen extends AbstractContainerScreen<ToasterScreenHandler>
             int progress = menu.getScaledProgress();
             int arrowFullHeight = 16;
 
-            int drawX = x + 85;
+            int drawX = x + 84;
             int drawY = y + 40 + (arrowFullHeight - progress);
 
             int textureU = 176;
