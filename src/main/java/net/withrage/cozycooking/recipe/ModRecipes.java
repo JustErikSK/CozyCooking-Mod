@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.withrage.cozycooking.CozyCooking;
+import net.withrage.cozycooking.recipe.custom.ItemPreservingShapedRecipeSerializer;
 import net.withrage.cozycooking.recipe.custom.ItemPreservingShapelessRecipeSerializer;
 
 public class ModRecipes {
@@ -25,6 +26,13 @@ public class ModRecipes {
                     BuiltInRegistries.RECIPE_SERIALIZER,
                     new ResourceLocation(CozyCooking.MOD_ID, "item_preserving_shapeless"),
                     new ItemPreservingShapelessRecipeSerializer()
+            );
+
+    public static final RecipeSerializer<?> ITEM_PRESERVING_SHAPED_SERIALIZER =
+            Registry.register(
+                    BuiltInRegistries.RECIPE_SERIALIZER,
+                    new ResourceLocation(CozyCooking.MOD_ID, "item_preserving_shaped"),
+                    new ItemPreservingShapedRecipeSerializer()
             );
 
     public static void registerRecipes() {
