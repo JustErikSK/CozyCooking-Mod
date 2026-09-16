@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"net.withrage.cozycooking.CozyCookingClient"
+		],
+		"jei_mod_plugin": [
+			"net.withrage.cozycooking.compat.jei.CozyCookingJEIPlugin"
 		]
 	},
 	"depends": {
