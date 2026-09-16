@@ -12,7 +12,7 @@ public class ModFoodComponents {
     public static final FoodProperties BAGUETTE = new FoodProperties.Builder().nutrition(6).saturationMod(0.3f).build();
     public static final FoodProperties BOILED_EGG = new FoodProperties.Builder().nutrition(3).saturationMod(0.45f).fast().build();
     public static final FoodProperties BURGER_BUN = new FoodProperties.Builder().nutrition(4).saturationMod(0.3f).fast().build();
-    public static final FoodProperties BURNED_TOAST = new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).alwaysEat().fast().effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 40, 1), 1.0f).build();
+    public static final FoodProperties BURNT_TOAST = new FoodProperties.Builder().nutrition(1).saturationMod(0.1f).alwaysEat().fast().effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 40, 1), 1.0f).build();
     public static final FoodProperties BUTTER = new FoodProperties.Builder().nutrition(1).saturationMod(0.15f).fast().build();
     public static final FoodProperties CARAMEL = new FoodProperties.Builder().nutrition(4).saturationMod(0.2f).fast().build();
     public static final FoodProperties CHEESE = new FoodProperties.Builder().nutrition(4).saturationMod(0.3f).fast().build();
@@ -50,7 +50,7 @@ public class ModFoodComponents {
     public static final FoodProperties CHIPS = new FoodProperties.Builder().nutrition(5).saturationMod(0.4f).fast().build();
     public static final FoodProperties CHOCOLATE_CUPCAKE = new FoodProperties.Builder().nutrition(7).saturationMod(0.45f).build();
     public static final FoodProperties CHOCOLATE_DONUT = new FoodProperties.Builder().nutrition(7).saturationMod(0.5f).build();
-    public static final FoodProperties CHOCOLATE_MILK = new FoodProperties.Builder().nutrition(6).saturationMod(0.35f).alwaysEat().fast().build();
+    public static final FoodProperties CHOCOLATE_MILK_BOX = new FoodProperties.Builder().nutrition(6).saturationMod(0.35f).alwaysEat().fast().build();
     public static final FoodProperties FRIES = new FoodProperties.Builder().nutrition(6).saturationMod(0.5f).fast().build();
     public static final FoodProperties GLISTERING_MELONADE = new FoodProperties.Builder().nutrition(7).saturationMod(0.4f).alwaysEat().fast().effect(new MobEffectInstance(MobEffects.HEALTH_BOOST, 1, -1), 100).build();
     public static final FoodProperties GLOWBERRY_DONUT = new FoodProperties.Builder().nutrition(7).saturationMod(0.5f).effect(new MobEffectInstance(MobEffects.GLOWING, 100, 1), 50).build();

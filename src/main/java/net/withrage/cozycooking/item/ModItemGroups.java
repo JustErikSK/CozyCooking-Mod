@@ -104,7 +104,7 @@ public class ModItemGroups {
                         entries.accept(ModItems.NUHTELLA_ICE_CREAM);
                         entries.accept(ModItems.BERRY_CUPCAKE);
                         entries.accept(ModItems.CHOCOLATE_CUPCAKE);
-                        entries.accept(ModItems.CHOCOLATE_MILK);
+                        entries.accept(ModItems.CHOCOLATE_MILK_BOX);
                         entries.accept(ModItems.MILK_BREAD);
                         entries.accept(ModItems.POT_PIE);
                         entries.accept(ModItems.CHICKEN_MUSHROOM_PIE);

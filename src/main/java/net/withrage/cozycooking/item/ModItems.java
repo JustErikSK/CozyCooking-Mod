@@ -31,7 +31,7 @@ public class ModItems {
     public static final Item SLICE_OF_BREAD = registerItem("slice_of_bread", new Item(new FabricItemSettings().food(ModFoodComponents.SLICE_OF_BREAD)));
     public static final Item BOILED_EGG = registerItem("boiled_egg", new Item(new FabricItemSettings().food(ModFoodComponents.BOILED_EGG)));
     public static final Item BURGER_BUN = registerItem("burger_bun", new Item(new FabricItemSettings().food(ModFoodComponents.BURGER_BUN)));
-    public static final Item BURNT_TOAST = registerItem("burnt_toast", new Item(new FabricItemSettings().food(ModFoodComponents.BURNED_TOAST)));
+    public static final Item BURNT_TOAST = registerItem("burnt_toast", new Item(new FabricItemSettings().food(ModFoodComponents.BURNT_TOAST)));
     public static final Item NOODLES = registerItem("noodles", new Item(new FabricItemSettings().food(ModFoodComponents.NOODLES)));
     public static final Item PAN = registerItem("pan", new Item(new FabricItemSettings()));
     public static final Item RAW_CHIPS = registerItem("raw_chips", new Item(new FabricItemSettings().food(ModFoodComponents.RAW_CHIPS)));
@@ -72,7 +72,7 @@ public class ModItems {
     public static final Item CHIPS = registerItem("chips", new Item(new FabricItemSettings().food(ModFoodComponents.CHIPS)));
     public static final Item CHOCOLATE_CUPCAKE = registerItem("chocolate_cupcake", new Item(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_CUPCAKE)));
     public static final Item CHOCOLATE_DONUT = registerItem("chocolate_donut", new Item(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_DONUT)));
-    public static final Item CHOCOLATE_MILK = registerItem("chocolate_milk", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_MILK)));
+    public static final Item CHOCOLATE_MILK_BOX = registerItem("chocolate_milk_box", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_MILK_BOX)));
     public static final Item JELLY_DONUT = registerItem("jelly_donut", new Item(new FabricItemSettings().food(ModFoodComponents.JELLY_DONUT)));
     public static final Item FRIES = registerItem("fries", new Item(new FabricItemSettings().food(ModFoodComponents.FRIES)));
     public static final Item GLISTERING_MELONADE = registerItem("glistering_melonade", new Item(new FabricItemSettings().food(ModFoodComponents.GLISTERING_MELONADE)));
