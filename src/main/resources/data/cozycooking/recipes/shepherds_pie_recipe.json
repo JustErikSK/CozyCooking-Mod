@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "tag": "cozycooking:minced_meat"
+    },
+    {
+      "item": "minecraft:potato"
+    },
+    {
+      "item": "cozycooking:salt"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:shepherds_pie",
+    "count": 2
+  }
+}

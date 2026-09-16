@@ -1,0 +1,36 @@
+{
+  "type": "cozycooking:item_preserving_shaped",
+  "category": "food",
+  "pattern": [
+    " A ",
+    "BCD",
+    "EFG"
+  ],
+  "key": {
+    "A": {
+      "item": "cozycooking:cake_form"
+    },
+    "B": {
+      "item": "cozycooking:cocoa_powder"
+    },
+    "C": {
+      "item": "cozycooking:flour"
+    },
+    "D": {
+      "item": "cozycooking:powdered_sugar"
+    },
+    "E": {
+      "item": "cozycooking:milk_box"
+    },
+    "F": {
+      "item": "cozycooking:butter"
+    },
+    "G": {
+      "item": "minecraft:egg"
+    }
+  },
+  "result": {
+    "item": "cozycooking:marble_cake",
+    "count": 4
+  }
+}

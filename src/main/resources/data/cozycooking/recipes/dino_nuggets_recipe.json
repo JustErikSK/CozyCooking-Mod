@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 180,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "cozycooking:raw_dino_nuggets"
+  },
+  "result": "cozycooking:dino_nuggets"
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:gelatin"
+    },
+    {
+      "item": "cozycooking:glass_of_water"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:purple_dye"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:purple_jelly",
+    "count": 2
+  }
+}

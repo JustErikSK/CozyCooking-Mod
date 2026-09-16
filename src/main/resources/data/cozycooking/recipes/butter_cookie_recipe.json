@@ -1,0 +1,22 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:cookie_cutter"
+    },
+    {
+      "item": "cozycooking:flour"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:butter_cookie",
+    "count": 4
+  }
+}

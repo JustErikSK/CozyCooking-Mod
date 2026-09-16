@@ -1,0 +1,25 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:burger_bun"
+    },
+    {
+      "item": "cozycooking:cheese"
+    },
+    {
+      "tag": "cozycooking:minced_meat"
+    },
+    {
+      "item": "cozycooking:bacon"
+    },
+    {
+      "item": "cozycooking:pan"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:bacon_cheeseburger",
+    "count": 2
+  }
+}

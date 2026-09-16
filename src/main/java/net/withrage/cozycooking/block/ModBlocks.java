@@ -16,34 +16,12 @@ import net.withrage.cozycooking.block.custom.ToasterBlock;
 
 public class ModBlocks {
 
-    public static final Block TOASTER = registerBlock(
-            "toaster",
-            new ToasterBlock(
-                    FabricBlockSettings.copyOf(Blocks.SPAWNER)
-                            .nonOpaque()
-                            .requiresTool()
-            )
-    );
-
-    public static final Block CLOTH = registerBlock(
-            "cloth",
-            new ClothBlock(
-                    FabricBlockSettings.copyOf(Blocks.WHITE_WOOL)
-                            .nonOpaque()
-            )
-    );
-
-    public static final Block CUTTING_BOARD = registerBlock(
-            "cutting_board",
-            new CuttingBoardBlock(
-                    FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)
-                            .nonOpaque()
-            )
-    );
+    public static final Block TOASTER = registerBlock("toaster", new ToasterBlock(FabricBlockSettings.copyOf(Blocks.SPAWNER).nonOpaque().requiresTool()));
+    public static final Block CLOTH = registerBlock("cloth", new ClothBlock(FabricBlockSettings.copyOf(Blocks.WHITE_WOOL).nonOpaque()));
+    public static final Block CUTTING_BOARD = registerBlock("cutting_board", new CuttingBoardBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).nonOpaque()));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
-
         return Registry.register(
                 BuiltInRegistries.BLOCK,
                 new ResourceLocation(CozyCooking.MOD_ID, name),

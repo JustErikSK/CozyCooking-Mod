@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:salt"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:chicken_mushroom_pie",
+    "count": 2
+  }
+}

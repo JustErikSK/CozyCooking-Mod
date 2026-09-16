@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:carrot"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "item": "cozycooking:boiled_egg"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:veggie_ramen",
+    "count": 2
+  }
+}

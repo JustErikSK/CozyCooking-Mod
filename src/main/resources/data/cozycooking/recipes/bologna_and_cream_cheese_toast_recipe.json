@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "food",
+  "pattern": [
+    "BC ",
+    " A ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "cozycooking:toast"
+    },
+    "B": {
+      "item": "cozycooking:bologna"
+    },
+    "C": {
+      "item": "cozycooking:cream_cheese"
+    }
+  },
+  "result": {
+    "item": "cozycooking:bologna_and_cream_cheese_toast",
+    "count": 2
+  }
+}

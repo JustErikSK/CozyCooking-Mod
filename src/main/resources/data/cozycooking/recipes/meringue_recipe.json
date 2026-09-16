@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "cozycooking:salt"
+    },
+    {
+      "item": "cozycooking:powdered_sugar"
+    },
+    {
+      "item": "cozycooking:powdered_sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:meringue",
+    "count": 4
+  }
+}

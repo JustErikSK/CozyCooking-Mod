@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": [
+    " A ",
+    "BC ",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "cozycooking:toast"
+    },
+    "B": {
+      "item": "cozycooking:bologna"
+    },
+    "C": {
+      "item": "cozycooking:cheese"
+    }
+  },
+  "result": {
+    "item": "cozycooking:ham_and_cheese_sandwich",
+    "count": 2
+  }
+}

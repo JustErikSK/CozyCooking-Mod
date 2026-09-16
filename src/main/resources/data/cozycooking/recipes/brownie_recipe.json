@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:flour"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:chocolate_syrup"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:brownie",
+    "count": 2
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:cookie_cutter"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:pan"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:glazed_donut",
+    "count": 2
+  }
+}

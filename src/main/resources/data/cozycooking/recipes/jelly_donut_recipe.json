@@ -1,0 +1,25 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:cookie_cutter"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:pan"
+    },
+    {
+      "tag": "cozycooking:jams"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:jelly_donut",
+    "count": 2
+  }
+}

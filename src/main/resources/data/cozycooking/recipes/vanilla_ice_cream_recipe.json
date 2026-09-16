@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": [
+    "AB ",
+    " D ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:ice"
+    },
+    "B": {
+      "item": "cozycooking:whipped_cream"
+    },
+    "D": {
+      "item": "cozycooking:ice_cream_cone"
+    }
+  },
+  "result": {
+    "item": "cozycooking:vanilla_ice_cream",
+    "count": 2
+  }
+}

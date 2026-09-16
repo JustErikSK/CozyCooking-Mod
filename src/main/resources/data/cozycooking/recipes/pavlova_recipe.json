@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "cozycooking:powdered_sugar"
+    },
+    {
+      "item": "cozycooking:meringue"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:pavlova",
+    "count": 2
+  }
+}

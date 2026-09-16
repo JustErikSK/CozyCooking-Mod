@@ -1,0 +1,22 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:salt"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:pan"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:pretzel",
+    "count": 3
+  }
+}

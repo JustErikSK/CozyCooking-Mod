@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:whipped_cream"
+    },
+    {
+      "item": "cozycooking:milk_box"
+    },
+    {
+      "item": "cozycooking:flour"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:milk_bread",
+    "count": 3
+  }
+}

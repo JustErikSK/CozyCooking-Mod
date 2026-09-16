@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": [
+    " B ",
+    " A ",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "cozycooking:waffle"
+    },
+    "B": {
+      "item": "cozycooking:chocolate_syrup"
+    }
+  },
+  "result": {
+    "item": "cozycooking:waffle_with_chocolate_syrup",
+    "count": 1
+  }
+}

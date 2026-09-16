@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:flour"
+    },
+    {
+      "item": "cozycooking:milk_box"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "cozycooking:berries"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:berry_cupcake",
+    "count": 4
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:dough"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:pan"
+    },
+    {
+      "item": "cozycooking:cookie_cutter"
+    },
+    {
+      "item": "cozycooking:chocolate_syrup"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:chocolate_donut",
+    "count": 2
+  }
+}

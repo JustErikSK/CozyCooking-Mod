@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:bacon"
+    },
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "cozycooking:cheese"
+    },
+    {
+      "item": "cozycooking:burger_bun"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:breakfast_burger",
+    "count": 2
+  }
+}

@@ -9,6 +9,7 @@ import net.withrage.cozycooking.CozyCooking;
 import net.withrage.cozycooking.item.custom.MilkBoxItem;
 
 public class ModItems {
+    // Ingredients
     public static final Item APPLE_JAM = registerItem("apple_jam", new Item(new FabricItemSettings().food(ModFoodComponents.APPLE_JAM)));
     public static final Item SWEETBERRY_JAM = registerItem("sweetberry_jam", new Item(new FabricItemSettings().food(ModFoodComponents.SWEETBERRY_JAM)));
     public static final Item GLOWBERRY_JAM = registerItem("glowberry_jam", new Item(new FabricItemSettings().food(ModFoodComponents.GLOWBERRY_JAM)));
@@ -63,6 +64,69 @@ public class ModItems {
     public static final Item RAMEKIN = registerItem("ramekin", new Item(new FabricItemSettings()));
     public static final Item EGG_YOLKS = registerItem("egg_yolks", new Item(new FabricItemSettings()));
     public static final Item EGG_WHITES = registerItem("egg_whites", new Item(new FabricItemSettings()));
+    // Main food
+    public static final Item APPLE_JUICE = registerItem("apple_juice", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.APPLE_JUICE)));
+    public static final Item APPLE_PIE = registerItem("apple_pie", new Item(new FabricItemSettings().food(ModFoodComponents.APPLE_PIE)));
+    public static final Item BERRY_CUPCAKE = registerItem("berry_cupcake", new Item(new FabricItemSettings().food(ModFoodComponents.BERRY_CUPCAKE)));
+    public static final Item CHICKEN_MUSHROOM_PIE = registerItem("chicken_mushroom_pie", new Item(new FabricItemSettings().food(ModFoodComponents.CHICKEN_MUSHROOM_PIE)));
+    public static final Item CHIPS = registerItem("chips", new Item(new FabricItemSettings().food(ModFoodComponents.CHIPS)));
+    public static final Item CHOCOLATE_CUPCAKE = registerItem("chocolate_cupcake", new Item(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_CUPCAKE)));
+    public static final Item CHOCOLATE_DONUT = registerItem("chocolate_donut", new Item(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_DONUT)));
+    public static final Item CHOCOLATE_MILK = registerItem("chocolate_milk", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_MILK)));
+    public static final Item JELLY_DONUT = registerItem("jelly_donut", new Item(new FabricItemSettings().food(ModFoodComponents.JELLY_DONUT)));
+    public static final Item FRIES = registerItem("fries", new Item(new FabricItemSettings().food(ModFoodComponents.FRIES)));
+    public static final Item GLISTERING_MELONADE = registerItem("glistering_melonade", new Item(new FabricItemSettings().food(ModFoodComponents.GLISTERING_MELONADE)));
+    public static final Item GLOWBERRY_DONUT = registerItem("glowberry_donut", new Item(new FabricItemSettings().food(ModFoodComponents.GLOWBERRY_DONUT)));
+    public static final Item GLOWBERRY_ICE_CREAM = registerItem("glowberry_ice_cream", new Item(new FabricItemSettings().food(ModFoodComponents.GLOWBERRY_ICE_CREAM)));
+    public static final Item GLOWBERRY_JUICE = registerItem("glowberry_juice", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.GLOWBERRY_JUICE)));
+    public static final Item GLOWBERRY_PIE = registerItem("glowberry_pie", new Item(new FabricItemSettings().food(ModFoodComponents.GLOWBERRY_PIE)));
+    public static final Item MELONADE = registerItem("melonade", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.MELONADE)));
+    public static final Item MERINGUE = registerItem("meringue", new Item(new FabricItemSettings().food(ModFoodComponents.MERINGUE)));
+    public static final Item MILK_BREAD = registerItem("milk_bread", new Item(new FabricItemSettings().food(ModFoodComponents.MILK_BREAD)));
+    public static final Item NUHTELLA_ICE_CREAM = registerItem("nuhtella_ice_cream", new Item(new FabricItemSettings().food(ModFoodComponents.NUHTELLA_ICE_CREAM)));
+    public static final Item POT_PIE = registerItem("pot_pie", new Item(new FabricItemSettings().food(ModFoodComponents.POT_PIE)));
+    public static final Item PRETZEL = registerItem("pretzel", new Item(new FabricItemSettings().food(ModFoodComponents.PRETZEL)));
+    public static final Item GLAZED_DONUT = registerItem("glazed_donut", new Item(new FabricItemSettings().food(ModFoodComponents.GLAZED_DONUT)));
+    public static final Item SWEETBERRY_DONUT = registerItem("sweetberry_donut", new Item(new FabricItemSettings().food(ModFoodComponents.SWEETBERRY_DONUT)));
+    public static final Item SWEETBERRY_ICE_CREAM = registerItem("sweetberry_ice_cream", new Item(new FabricItemSettings().food(ModFoodComponents.SWEETBERRY_ICE_CREAM)));
+    public static final Item SWEETBERRY_JUICE = registerItem("sweetberry_juice", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.SWEETBERRY_JUICE)));
+    public static final Item SWEETBERRY_PIE = registerItem("sweetberry_pie", new Item(new FabricItemSettings().food(ModFoodComponents.SWEETBERRY_PIE)));
+    public static final Item VANILLA_ICE_CREAM = registerItem("vanilla_ice_cream", new Item(new FabricItemSettings().food(ModFoodComponents.VANILLA_ICE_CREAM)));
+    public static final Item BOLOGNA_AND_CREAM_CHEESE_TOAST = registerItem("bologna_and_cream_cheese_toast", new Item(new FabricItemSettings().food(ModFoodComponents.BOLOGNA_AND_CREAM_CHEESE_TOAST)));
+    public static final Item BREAKFAST_BURGER = registerItem("breakfast_burger", new Item(new FabricItemSettings().food(ModFoodComponents.BREAKFAST_BURGER)));
+    public static final Item BUTTER_COOKIE = registerItem("butter_cookie", new Item(new FabricItemSettings().food(ModFoodComponents.BUTTER_COOKIE)));
+    public static final Item EGG_TOAST = registerItem("egg_toast", new Item(new FabricItemSettings().food(ModFoodComponents.EGG_TOAST)));
+    public static final Item ENCHANTED_GOLDEN_APPLE_JUICE = registerItem("enchanted_golden_apple_juice", new EnchantedGoldenAppleJuiceItem(new FabricItemSettings().food(ModFoodComponents.ENCHANTED_GOLDEN_APPLE_JUICE)));
+    public static final Item GOLDEN_APPLE_JUICE = registerItem("golden_apple_juice", new DrinkItem(new FabricItemSettings().food(ModFoodComponents.GOLDEN_APPLE_JUICE)));
+    public static final Item HAM_AND_CHEESE_SANDWICH = registerItem("ham_and_cheese_sandwich", new Item(new FabricItemSettings().food(ModFoodComponents.HAM_AND_CHEESE_SANDWICH)));
+    public static final Item NUHTELLA_TOAST = registerItem("nuhtella_toast", new Item(new FabricItemSettings().food(ModFoodComponents.NUHTELLA_TOAST)));
+    public static final Item TOAST_WITH_BUTTER = registerItem("toast_with_butter", new Item(new FabricItemSettings().food(ModFoodComponents.TOAST_WITH_BUTTER)));
+    public static final Item TOAST_WITH_JAM = registerItem("toast_with_jam", new Item(new FabricItemSettings().food(ModFoodComponents.TOAST_WITH_JAM)));
+    public static final Item BROWNIE = registerItem("brownie", new Item(new FabricItemSettings().food(ModFoodComponents.BROWNIE)));
+    public static final Item WAFFLE_WITH_CHOCOLATE_SYRUP = registerItem("waffle_with_chocolate_syrup", new Item(new FabricItemSettings().food(ModFoodComponents.WAFFLE_WITH_CHOCOLATE_SYRUP)));
+    public static final Item WAFFLE_WITH_FRUIT_SYRUP = registerItem("waffle_with_fruit_syrup", new Item(new FabricItemSettings().food(ModFoodComponents.WAFFLE_WITH_FRUIT_SYRUP)));
+    public static final Item BLUE_JELLY = registerItem("blue_jelly", new Item(new FabricItemSettings().food(ModFoodComponents.BLUE_JELLY)));
+    public static final Item GREEN_JELLY = registerItem("green_jelly", new Item(new FabricItemSettings().food(ModFoodComponents.GREEN_JELLY)));
+    public static final Item ORANGE_JELLY = registerItem("orange_jelly", new Item(new FabricItemSettings().food(ModFoodComponents.ORANGE_JELLY)));
+    public static final Item PINK_JELLY = registerItem("pink_jelly", new Item(new FabricItemSettings().food(ModFoodComponents.PINK_JELLY)));
+    public static final Item PURPLE_JELLY = registerItem("purple_jelly", new Item(new FabricItemSettings().food(ModFoodComponents.PURPLE_JELLY)));
+    public static final Item YELLOW_JELLY = registerItem("yellow_jelly", new Item(new FabricItemSettings().food(ModFoodComponents.YELLOW_JELLY)));
+    public static final Item BEEF_RAMEN = registerItem("beef_ramen", new Item(new FabricItemSettings().food(ModFoodComponents.BEEF_RAMEN)));
+    public static final Item CHICKEN_RAMEN = registerItem("chicken_ramen", new Item(new FabricItemSettings().food(ModFoodComponents.CHICKEN_RAMEN)));
+    public static final Item PORK_RAMEN = registerItem("pork_ramen", new Item(new FabricItemSettings().food(ModFoodComponents.PORK_RAMEN)));
+    public static final Item SEAFOOD_RAMEN = registerItem("seafood_ramen", new Item(new FabricItemSettings().food(ModFoodComponents.SEAFOOD_RAMEN)));
+    public static final Item BACON_BURGER = registerItem("bacon_burger", new Item(new FabricItemSettings().food(ModFoodComponents.BACON_BURGER)));
+    public static final Item BACON_CHEESEBURGER = registerItem("bacon_cheeseburger", new Item(new FabricItemSettings().food(ModFoodComponents.BACON_CHEESEBURGER)));
+    public static final Item CHEESEBURGER = registerItem("cheeseburger", new Item(new FabricItemSettings().food(ModFoodComponents.CHEESEBURGER)));
+    public static final Item KIDS_MEAL = registerItem("kids_meal", new Item(new FabricItemSettings().food(ModFoodComponents.KIDS_MEAL)));
+    public static final Item BACON_AND_EGG_PIE = registerItem("bacon_and_egg_pie", new Item(new FabricItemSettings().food(ModFoodComponents.BACON_AND_EGG_PIE)));
+    public static final Item CREME_BRULEE = registerItem("creme_brulee", new Item(new FabricItemSettings().food(ModFoodComponents.CREME_BRULEE)));
+    public static final Item MARBLE_CAKE = registerItem("marble_cake", new Item(new FabricItemSettings().food(ModFoodComponents.MARBLE_CAKE)));
+    public static final Item SHEPHERDS_PIE = registerItem("shepherds_pie", new Item(new FabricItemSettings().food(ModFoodComponents.SHEPHERDS_PIE)));
+    public static final Item DINO_NUGGETS = registerItem("dino_nuggets", new Item(new FabricItemSettings().food(ModFoodComponents.DINO_NUGGETS)));
+    public static final Item PAVLOVA = registerItem("pavlova", new Item(new FabricItemSettings().food(ModFoodComponents.PAVLOVA)));
+    public static final Item VEGGIE_RAMEN = registerItem("veggie_ramen", new Item(new FabricItemSettings().food(ModFoodComponents.VEGGIE_RAMEN)));
+    public static final Item CHOCOLATE_BAR = registerItem("chocolate_bar", new Item(new FabricItemSettings().food(ModFoodComponents.CHOCOLATE_BAR)));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(

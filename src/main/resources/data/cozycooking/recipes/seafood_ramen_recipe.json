@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "tag": "cozycooking:aquatic_food"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "item": "cozycooking:boiled_egg"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:seafood_ramen",
+    "count": 2
+  }
+}

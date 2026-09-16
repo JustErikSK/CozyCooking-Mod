@@ -1,0 +1,22 @@
+{
+  "type": "cozycooking:item_preserving_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:raw_chips"
+    },
+    {
+      "item": "cozycooking:butter"
+    },
+    {
+      "item": "cozycooking:pan"
+    },
+    {
+      "item": "cozycooking:salt"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:chips",
+    "count": 3
+  }
+}

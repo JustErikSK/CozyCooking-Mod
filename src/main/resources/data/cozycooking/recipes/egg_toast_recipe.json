@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "food",
+  "ingredients": [
+    {
+      "item": "cozycooking:sunny_side_up_egg"
+    },
+    {
+      "item": "cozycooking:toast"
+    }
+  ],
+  "result": {
+    "item": "cozycooking:egg_toast",
+    "count": 2
+  }
+}
