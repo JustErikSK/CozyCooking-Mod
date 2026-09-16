@@ -2,7 +2,7 @@
   "type": "cozycooking:toasting",
   "category": "misc",
   "input": {
-    "item": "cozycooking:burned_toast"
+    "item": "cozycooking:burnt_toast"
   },
   "output": {
     "item": "minecraft:charcoal",

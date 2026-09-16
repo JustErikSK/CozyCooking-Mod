@@ -5,7 +5,7 @@
     "item": "cozycooking:toast"
   },
   "output": {
-    "item": "cozycooking:burned_toast",
+    "item": "cozycooking:burnt_toast",
     "count": 1
   }
 }
